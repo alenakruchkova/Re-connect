@@ -52,13 +52,13 @@ def connect_to_db(app):
     """Connect the database to Flask app."""
 
     # Configure to use PstgreSQL database
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///rocketmendb'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///rocketmendb'  # need to change
     db.app = app
     db.init_app(app)
 
 
 if __name__ == "__main__":
 
-    from server import app
+    from app import app
     connect_to_db(app)
     print "Connected to DB."
