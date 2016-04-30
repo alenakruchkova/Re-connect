@@ -15,7 +15,7 @@ class Organization(db.Model):
 
     uniq_id = db.Column(db.Integer, autoincrement=True,
                         primary_key=True)
-    hashed_password = db.Column(db.Integer, nullable=False)
+    hashed_password = db.Column(db.Integer, nullable=True)
     name = db.Column(db.String(300), nullable=False)
     address = db.Column(db.String(400), nullable=False)
     email = db.Column(db.String(100), nullable=True)
@@ -24,28 +24,10 @@ class Organization(db.Model):
     serves_women = db.Column(db.Boolean, nullable=True)
     serves_lgbtq = db.Column(db.Boolean, nullable=True)
     serves_minors = db.Column(db.Boolean, nullable=True)
-
-    #Define relationship to resource
-    resource = db.relationship("Resource",
-                               backref=db.backref("organizations"))
-
-
-class Resource(db.Model):
-    """List of resources provided by organizations"""
-
-    __tablename__ = "resources"
-
-    id_num = db.Column(db.Integer, autoincrement=True,
-                        primary_key=True)
-    uniq_id = db.Column(db.Integer, db.ForeignKey("organizations.uniq_id"),
-                        nullable=False)
     emergency_housing = db.Column(db.Integer, nullable=True)
     long_term_housing = db.Column(db.Integer, nullable=True)
     counseling = db.Column(db.Boolean, nullable=True)
     career_assist = db.Column(db.Boolean, nullable=True)
-
-    #Define relationship to organization
-    organization = db.relationship("Organization", backref=db.backref("resources"))
 
 
 ##############################################################################

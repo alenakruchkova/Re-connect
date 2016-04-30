@@ -22,6 +22,7 @@ def signup_route():
 
 @server.route('/home')
 def home_route():
+
     """Homepage with search form"""
 
     # 2.0 search options for geo proximity, last update
@@ -44,5 +45,3 @@ def view_org():
 
     options = {}
     return render_template("org.html", **options)
-
-
