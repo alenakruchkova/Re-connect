@@ -15,6 +15,7 @@ class Organization(db.Model):
 
     uniq_id = db.Column(db.Integer, autoincrement=True,
                         primary_key=True)
+    hashed_password = db.Column(db.Integer, nullable=False)
     name = db.Column(db.String(300), nullable=False)
     address = db.Column(db.String(400), nullable=False)
     email = db.Column(db.String(100), nullable=True)
@@ -34,6 +35,8 @@ class Resource(db.Model):
 
     __tablename__ = "resources"
 
+    id_num = db.Column(db.Integer, autoincrement=True,
+                        primary_key=True)
     uniq_id = db.Column(db.Integer, db.ForeignKey("organizations.uniq_id"),
                         nullable=False)
     emergency_housing = db.Column(db.Integer, nullable=True)
@@ -52,7 +55,7 @@ def connect_to_db(app):
     """Connect the database to Flask app."""
 
     # Configure to use PstgreSQL database
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///rocketmendb'  # need to change
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://13.88.25.31:5432/compose_postgres_1'  # need to change
     db.app = app
     db.init_app(app)
 
