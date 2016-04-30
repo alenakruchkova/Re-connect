@@ -15,7 +15,7 @@ class Organization(db.Model):
 
     uniq_id = db.Column(db.Integer, autoincrement=True,
                         primary_key=True)
-    hashed_password = db.Column(db.Integer, nullable=False)
+    hashed_password = db.Column(db.Integer, nullable=True)
     name = db.Column(db.String(300), nullable=False)
     address = db.Column(db.String(400), nullable=False)
     email = db.Column(db.String(100), nullable=True)
