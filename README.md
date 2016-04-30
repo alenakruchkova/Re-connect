@@ -9,3 +9,7 @@ git add [a file]
 git commit -m "[a message]"
 
 git push -u origin master
+
+## Devpost:
+
+http://devpost.com/software/re-connect
