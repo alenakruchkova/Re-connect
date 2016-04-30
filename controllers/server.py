@@ -21,7 +21,12 @@ def signup_route():
 
 
 @server.route('/home')
+<<<<<<< HEAD
 def home_rout():
+=======
+def home_route():
+
+>>>>>>> d0b37e032ec8b91f521ded3052823339aef194cd
     """Homepage with search form"""
 
     # 2.0 search options for geo proximity, last update
@@ -57,7 +62,7 @@ def view_matches():
 @server.route('/profile')
 # @app.route("/profile/<int:uniq_id>")
 # def show_melon(uniq_id):
-def show_melon():
+def show_profile():
     """Return page showing the details of a given organization.
 
     Show all info about a organization. 
@@ -66,3 +71,5 @@ def show_melon():
 
     return render_template("profile.html")
 
+    options = {}
+    return render_template("org.html", **options)
