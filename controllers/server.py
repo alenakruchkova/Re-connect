@@ -6,8 +6,8 @@ server = Blueprint('server', __name__, template_folder='views')
 def main_route():
 	"""Show landing page"""
 
-    options = {}
-    return render_template("index.html", **options)
+	options = {}
+	return render_template("index.html", **options)
 
 
 @server.route('/signup')
@@ -21,7 +21,7 @@ def signup_route():
 
 
 @server.route('/home')
-def home_rout():
+def home_route():
 	"""Homepage with search form"""
 
 	# 2.0 search options for geo proximity, last update
