@@ -21,7 +21,8 @@ def signup_route():
 
 
 @server.route('/home')
-def home_rout():
+def home_route():
+
     """Homepage with search form"""
 
     # 2.0 search options for geo proximity, last update
