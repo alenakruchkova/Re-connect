@@ -2,10 +2,10 @@
 ## Create repository:
 git init
 
-git add README.md
-
-git commit -m "first commit"
-
 git remote add origin https://github.com/alenakruchkova/Re-connect.git
+
+git add [a file]
+
+git commit -m "[a message]"
 
 git push -u origin master
