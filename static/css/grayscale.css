@@ -4,7 +4,7 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
-body {
+ body {
     width: 100%;
     height: 100%;
     font-family: Lora,"Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -450,10 +450,19 @@ body {
 
 .homepage {
     background: rgba(255, 255, 255, .4);
-    color: #555555;
+    color: #000;
 }
 
 .update-form {
-     border-right:1px solid white; 
+   border-right:1px solid white;
 }
 
+.number-spinner {
+    min-width: 120px;
+}
+
+.resource-inputs {
+    background: white;
+    padding-top: 25px;
+    padding-left: 15px;
+}
