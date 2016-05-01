@@ -3,11 +3,12 @@
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
+@import "http://fonts.googleapis.com/css?family=Roboto:300,400,500,700";
 
-body {
+ body {
     width: 100%;
     height: 100%;
-    font-family: Lora,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Roboto",Arial,Verdana,sans-serif;
     color: #fff;
     background-color: #000;
 }
@@ -25,7 +26,7 @@ h5,
 h6 {
     margin: 0 0 35px;
     text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Roboto",Arial,Verdana,sans-serif;
     font-weight: 700;
     letter-spacing: 1px;
 }
@@ -65,7 +66,7 @@ a:focus {
     margin-bottom: 0;
     border-bottom: 1px solid rgba(255,255,255,.3);
     text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Roboto",Arial,Verdana,sans-serif;
     background-color: #000;
 }
 
@@ -446,4 +447,23 @@ body {
 .icon-addon .form-control:focus + .fa,
 .icon-addon:hover .fa {
     color: #2580db;
+}
+
+.homepage {
+    background: rgba(255, 255, 255, .4);
+    color: #000;
+}
+
+.update-form {
+   border-right:1px solid white;
+}
+
+.number-spinner {
+    min-width: 120px;
+}
+
+.resource-inputs {
+    background: white;
+    padding-top: 25px;
+    padding-left: 15px;
 }
