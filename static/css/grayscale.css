@@ -148,7 +148,7 @@ a:focus {
     padding: 100px 0;
     text-align: center;
     color: #fff;
-    background: url(../img/intro-bg.jpg) no-repeat bottom center scroll;
+    background: url(../img/house2.png) no-repeat bottom center scroll;
     background-color: #000;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -266,7 +266,7 @@ a:focus {
     width: 100%;
     padding: 50px 0;
     color: #fff;
-    background: url(../img/downloads-bg.jpg) no-repeat center center scroll;
+    background: url(../img/house1.png) no-repeat center center scroll;
     background-color: #000;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -448,3 +448,40 @@ body {
 .icon-addon:hover .fa {
     color: #2580db;
 }
+<<<<<<< HEAD
+=======
+
+.homepage {
+    background: rgba(255, 255, 255, .4);
+    color: #000;
+}
+
+.update-form {
+   border-right:1px solid white;
+}
+
+.number-spinner {
+    min-width: 120px;
+}
+
+.resource-inputs {
+    background: white;
+    padding-top: 25px;
+    padding-left: 15px;
+}
+
+.title-container {
+    background: rgba(0,0,0,.4);
+    padding: 15px;
+}
+
+.contact-container {
+    background: rgba(0,0,0,.4);
+    padding: 15px;
+}
+
+.signup-container {
+    background: rgba(0,0,0, .4);
+    padding: 15px;
+}
+>>>>>>> 3821e0a9f8cfd770283b6a82621e0af746f83ac9
