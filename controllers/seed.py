@@ -1,7 +1,6 @@
 """Utility file to seed Re-connect database with demo data"""
 
 from model import Organization
-from model import Resource
 
 from model import connect_to_db, db
 from app import app
