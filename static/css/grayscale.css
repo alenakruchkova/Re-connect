@@ -447,3 +447,13 @@ body {
 .icon-addon:hover .fa {
     color: #2580db;
 }
+
+.homepage {
+    background: rgba(255, 255, 255, .4);
+    color: #555555;
+}
+
+.update-form {
+     border-right:1px solid white; 
+}
+
