@@ -1,5 +1,9 @@
 from flask import *
+# from twilio.rest import TwilioRestClient
+import twilio.twiml
 
+
+client = TwilioRestClient(ACCOUNT_SID, AUTH_TOKEN)
 
 server = Blueprint('server', __name__, template_folder='views')
 # apart of Flask mail:
@@ -15,6 +19,16 @@ server = Blueprint('server', __name__, template_folder='views')
 #     )
 
 # mail = Mail(app)
+
+ 
+@server.route("/voice", methods=['GET', 'POST'])
+def hello_monkey():
+    """Respond to incoming requests."""
+    resp = twilio.twiml.Response()
+    resp.say("Hello Monkey")
+ 
+    return str(resp)
+
 
 @server.route('/')
 def main_route():

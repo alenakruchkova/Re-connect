@@ -1,5 +1,8 @@
 *.py[cod]
 
+# secrets.sh
+secrets.sh
+
 # Virtual Env
 venv
 
