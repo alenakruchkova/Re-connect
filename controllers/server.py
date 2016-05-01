@@ -1,34 +1,25 @@
 from flask import *
-# from twilio.rest import TwilioRestClient
+from twilio.rest import TwilioRestClient
 import twilio.twiml
 
-
-client = TwilioRestClient(ACCOUNT_SID, AUTH_TOKEN)
+account_sid = "AC8f9b5a52430b59c4275e1a9b8bc7a78a"
+auth_token = "d78c7e970a38a975aa3e229d5700957c"
+client = TwilioRestClient(account_sid, auth_token)
 
 server = Blueprint('server', __name__, template_folder='views')
-# apart of Flask mail:
-# app.config.update(
-#     DEBUG=True,
-#     #EMAIL SETTINGS
-#     MAIL_SERVER='smtp.gmail.com',
-#     MAIL_PORT=465,
-#     MAIL_USE_SSL=True,
-#     MAIL_USE_TLS=False,
-#     MAIL_USERNAME=os.environ['athackhackathon@gmail.com'],
-#     MAIL_PASSWORD=os.environ['beyonceisamazing']
-#     )
-
-# mail = Mail(app)
 
  
 @server.route("/voice", methods=['GET', 'POST'])
 def hello_monkey():
     """Respond to incoming requests."""
-    resp = twilio.twiml.Response()
-    resp.say("Hello Monkey")
- 
-    return str(resp)
+    client.messages.create(
+    to="+12068502478",
+    from_="+12065390536",
+    body="Tomorrow's forecast in Financial District, San Francisco is Clear.",
+    media_url="https://climacons.herokuapp.com/clear.png",
+)
 
+    return "ok"
 
 @server.route('/')
 def main_route():
