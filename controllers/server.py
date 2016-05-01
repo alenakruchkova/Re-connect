@@ -120,3 +120,10 @@ def show_profile():
 
     options = {}
     return render_template("org.html", **options)
+
+
+@server.route('/companylist')
+def show_companylist():
+    """Return page showing a list of companies with contact buttons."""
+
+    return render_template("companylist.html")
