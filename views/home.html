@@ -24,54 +24,54 @@
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
-<!-- Navigation -->
-<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-                <i class="fa fa-bars"></i>
-            </button>
-            <a class="navbar-brand page-scroll" href="/">
-                <i class="fa fa-play-circle"></i>  Re-<span class="light">Connect</span>
-            </a>
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="/">
+                    <i class="fa fa-play-circle"></i>  Re-<span class="light">Connect</span>
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll">Log Out</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
         </div>
+        <!-- /.container -->
+    </nav>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-            <ul class="nav navbar-nav">
-                <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                <li class="hidden">
-                    <a href="#page-top"></a>
-                </li>
-                <li>
-                    <a class="page-scroll">Log Out</a>
-                </li>
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container -->
-</nav>
+    <link href="/static/css/search_results.css" rel="stylesheet">
 
-<link href="/static/css/search_results.css" rel="stylesheet">
+    <style>
 
-<style>
+        .intro,
+        .intro-body {
+           background-color: #fff;
+           color: #000;
+       }
 
-    .intro,
-    .intro-body {
-     background-color: #fff;
-     color: #000;
- }
+       .homepage {
+        color: #000;
+    }
 
- .homepage {
-    color: #000;
-}
+    .update-form {
+       border-right:1px solid white;
+   }
 
-.update-form {
- border-right:1px solid white;
-}
-
-.number-spinner {
+   .number-spinner {
     min-width: 120px;
 }
 
@@ -212,16 +212,16 @@
 							</div>
 						</div><br>
 
-<div class="row hidden" id="update-info">
+                        <div class="row hidden" id="update-info">
                             <font color="mediumseagreen">Resources updated, thanks!</font><br><br>
                         </div>
 
                         <div class="row center">
                           <div class="col-xs-6 col-md-6 col-xs-offset-3 col-md-offset-3"><input type="submit" value="Update" class="btn btn-success btn-block btn-lg" tabindex="8" onclick="showUpdatedText();"></div>
                       </div><br>
-					</div>
-				</div>
-				<div class="col-sm-8 col-md-8 search-form">
+                  </div>
+              </div>
+              <div class="col-sm-8 col-md-8 search-form">
 
 			<!-- <form action="/results">		    
      		<div class="input-group custom-search-form">
@@ -243,14 +243,14 @@
              
              <br> -->
 
-						<div class="row">
-						    
-		<h2>Search Resources</h2>
-     <br>
-            <div class="panel panel-default">
+             <div class="row">
+
+              <h2>Search Resources</h2>
+              <br>
+              <div class="panel panel-default">
                 <!-- Default panel contents -->
                 <div class="panel-heading">Criteria</div>
-            
+
                 <!-- List group -->
                 <ul class="list-group">
                     <li class="list-group-item">
@@ -291,13 +291,59 @@
                 </ul>
             </div>
             <div class="row center">
-            <div class="col-xs-6 col-md-6 col-xs-offset-3 col-md-offset-3"><input type="submit" value="Search" class="btn btn-success btn-block btn-lg" tabindex="8"></div>
+                <div class="col-xs-6 col-md-6 col-xs-offset-3 col-md-offset-3"><input type="submit" value="Search" class="btn btn-success btn-block btn-lg" tabindex="8"></div>
             </div><br>           
 
-				</div>
-			</div>
-		</div>
-	</div>
+        </div>
+    </div>
+</div>
+</div>
 </header>
+
+    <!-- jQuery -->
+    <script src="/static/js/jquery.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script>
+    
+$(function() {
+    var action;
+    $(".number-spinner button").mousedown(function () {
+        btn = $(this);
+        input = btn.closest('.number-spinner').find('input');
+        btn.closest('.number-spinner').find('button').prop("disabled", false);
+
+        if (btn.attr('data-dir') == 'up') {
+            action = setInterval(function(){
+                if ( input.attr('max') == undefined || parseInt(input.val()) < parseInt(input.attr('max')) ) {
+                    input.val(parseInt(input.val())+1);
+                }else{
+                    btn.prop("disabled", true);
+                    clearInterval(action);
+                }
+            }, 50);
+        } else {
+            action = setInterval(function(){
+                if ( input.attr('min') == undefined || parseInt(input.val()) > parseInt(input.attr('min')) ) {
+                    input.val(parseInt(input.val())-1);
+                }else{
+                    btn.prop("disabled", true);
+                    clearInterval(action);
+                }
+            }, 50);
+        }
+    }).mouseup(function(){
+        clearInterval(action);
+    });
+});
+
+function showUpdatedText() {
+    $('#update-info').addClass('hidden');
+    setTimeout(function() {
+    $('#update-info').removeClass('hidden');
+    }, 1000);
+}
+
+
+    </script>
 </body>
 </html>
