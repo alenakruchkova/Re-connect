@@ -5,18 +5,18 @@
 
 <style>
 
-.intro,
-.intro-body {
-   background-color: #fff;
-   color: #000;
-}
+    .intro,
+    .intro-body {
+     background-color: #fff;
+     color: #000;
+ }
 
-.homepage {
+ .homepage {
     color: #000;
 }
 
 .update-form {
-   border-right:1px solid white;
+ border-right:1px solid white;
 }
 
 .number-spinner {
@@ -160,85 +160,89 @@
 							</div>
 						</div><br>
 
+                        <div class="row hidden" id="update-info">
+                            <font color="mediumseagreen">Resources updated, thanks!</font><br><br>
+                        </div>
+
 						<div class="row center">
-						<div class="col-xs-6 col-md-6 col-xs-offset-3 col-md-offset-3"><input type="submit" value="Update" class="btn btn-success btn-block btn-lg" tabindex="8"></div>
-						</div><br>
-					</div>
-				</div>
-				<div class="col-sm-8 col-md-8 search-form">
+                          <div class="col-xs-6 col-md-6 col-xs-offset-3 col-md-offset-3"><input type="submit" value="Update" class="btn btn-success btn-block btn-lg" tabindex="8" onclick="showUpdatedText();"></div>
+                      </div><br>
+                  </div>
+              </div>
+              <div class="col-sm-8 col-md-8 search-form">
 
-			<form action="/results">		    
-     		<div class="input-group custom-search-form">
-              <input type="text"  placeholder="Search" class="form-control">
-              <span class="input-group-btn">
-              <button class="btn btn-default advenced" type="button">
-              <span class="glyphicon glyphicon-filter"></span>
-             </button>
-              <button class="btn btn-default" type="button">
-              <span class="glyphicon glyphicon-search"></span>
-             </button>
-             </span>            
-             </div>
-              <div id="panelAdv" style='display:none'>
-                <input type="text"  placeholder="Advenced input 1"  class="form-control">
-               <input type="text"  placeholder="Advenced input 2" class="form-control">
-                <input type="text"  placeholder="Advenced input 3" class="form-control">
-             </div>
-             
-             <br>
+                 <form action="/results">		    
+                     <div class="input-group custom-search-form">
+                      <input type="text"  placeholder="Search" class="form-control">
+                      <span class="input-group-btn">
+                          <button class="btn btn-default advenced" type="button">
+                              <span class="glyphicon glyphicon-filter"></span>
+                          </button>
+                          <button class="btn btn-default" type="button">
+                              <span class="glyphicon glyphicon-search"></span>
+                          </button>
+                      </span>            
+                  </div>
+                  <div id="panelAdv" style='display:none'>
+                    <input type="text"  placeholder="Advenced input 1"  class="form-control">
+                    <input type="text"  placeholder="Advenced input 2" class="form-control">
+                    <input type="text"  placeholder="Advenced input 3" class="form-control">
+                </div>
 
-						<div class="row">
-						    
-		
-     
-            <div class="panel panel-default">
-                <!-- Default panel contents -->
-                <div class="panel-heading">Criteria</div>
-            
-                <!-- List group -->
-                <ul class="list-group">
-                    <li class="list-group-item">
-                        Under 18 
-                        <div class="material-switch pull-right">
-                            <input id="someSwitchOptionDefault" name="someSwitchOption001" type="checkbox"/>
-                            <label for="someSwitchOptionDefault" class="label-default"></label>
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                        Women
-                        <div class="material-switch pull-right">
-                            <input id="someSwitchOptionPrimary" name="someSwitchOption001" type="checkbox"/>
-                            <label for="someSwitchOptionPrimary" class="label-primary"></label>
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                        LGBTQ
-                        <div class="material-switch pull-right">
-                            <input id="someSwitchOptionSuccess" name="someSwitchOption001" type="checkbox"/>
-                            <label for="someSwitchOptionSuccess" class="label-success"></label>
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                        Long-term housing
-                        <div class="material-switch pull-right">
-                            <input id="someSwitchOptionInfo" name="someSwitchOption001" type="checkbox"/>
-                            <label for="someSwitchOptionInfo" class="label-info"></label>
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                        Short-term housing
-                        <div class="material-switch pull-right">
-                            <input id="someSwitchOptionWarning" name="someSwitchOption001" type="checkbox"/>
-                            <label for="someSwitchOptionWarning" class="label-warning"></label>
-                        </div>
-                    </li>
-             
-                </ul>
-            </div>            
+                <br>
 
-				</div>
-			</div>
-		</div>
-	</div>
+                <div class="row">
+
+
+
+                    <div class="panel panel-default">
+                        <!-- Default panel contents -->
+                        <div class="panel-heading">Criteria</div>
+
+                        <!-- List group -->
+                        <ul class="list-group">
+                            <li class="list-group-item">
+                                Under 18 
+                                <div class="material-switch pull-right">
+                                    <input id="someSwitchOptionDefault" name="someSwitchOption001" type="checkbox"/>
+                                    <label for="someSwitchOptionDefault" class="label-default"></label>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                Women
+                                <div class="material-switch pull-right">
+                                    <input id="someSwitchOptionPrimary" name="someSwitchOption001" type="checkbox"/>
+                                    <label for="someSwitchOptionPrimary" class="label-primary"></label>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                LGBTQ
+                                <div class="material-switch pull-right">
+                                    <input id="someSwitchOptionSuccess" name="someSwitchOption001" type="checkbox"/>
+                                    <label for="someSwitchOptionSuccess" class="label-success"></label>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                Long-term housing
+                                <div class="material-switch pull-right">
+                                    <input id="someSwitchOptionInfo" name="someSwitchOption001" type="checkbox"/>
+                                    <label for="someSwitchOptionInfo" class="label-info"></label>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                Short-term housing
+                                <div class="material-switch pull-right">
+                                    <input id="someSwitchOptionWarning" name="someSwitchOption001" type="checkbox"/>
+                                    <label for="someSwitchOptionWarning" class="label-warning"></label>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>            
+
+                </div>
+            </div>
+        </div>
+    </div>
 </header>
 {% endblock %}

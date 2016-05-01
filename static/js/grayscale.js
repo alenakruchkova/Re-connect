@@ -37,6 +37,7 @@ $('.navbar-collapse ul li a').click(function() {
 $(function() {
     var action;
     $(".number-spinner button").mousedown(function () {
+        $('#update-info').addClass('hidden');
         btn = $(this);
         input = btn.closest('.number-spinner').find('input');
         btn.closest('.number-spinner').find('button').prop("disabled", false);
@@ -64,5 +65,9 @@ $(function() {
         clearInterval(action);
     });
 });
+
+function showUpdatedText() {
+    $('#update-info').removeClass('hidden');
+}
 
 
