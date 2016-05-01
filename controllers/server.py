@@ -32,6 +32,13 @@ def signup_route():
 
     options = {}
     return render_template("signup_form.html", **options)
+@server.route('/donors')
+def message_to_donors():
+    """Message to donors"""
+
+    options = {}
+    return render_template("donors.html", **options)
+
 
 @server.route('/signup', methods=['POST'])
 def signup_process():
@@ -123,8 +130,8 @@ def show_profile():
     return render_template("org.html", **options)
 
 
-@server.route('/companylist')
+@server.route('/results')
 def show_companylist():
     """Return page showing a list of companies with contact buttons."""
 
-    return render_template("companylist.html")
+    return render_template("results.html")

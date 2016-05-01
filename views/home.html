@@ -1,3 +1,90 @@
 {% extends "base.html" %}
 {% block content %}
+
+<!-- Intro Header -->
+<header class="intro">
+	<div class="intro-body">
+		<div class="container">
+			<div class="modal-body row homepage">
+				<div class="col-sm-4 col-md-4 update-form">
+					<h2>What resources do you have available?</h2>
+					<div class="resource-inputs">
+						<div class="row">
+							<div class="col-xs-5">
+								Emergency beds:
+							</div>
+							<div class="col-xs-2">
+								<div class="input-group number-spinner">
+									<span class="input-group-btn data-dwn">
+										<button class="btn btn-default btn-info" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></button>
+									</span>
+									<input type="text" class="form-control text-center" value="0" min="0">
+									<span class="input-group-btn data-up">
+										<button class="btn btn-default btn-info" data-dir="up"><span class="glyphicon glyphicon-plus"></span></button>
+									</span>
+								</div>
+							</div>
+						</div><br>
+						<div class="row">
+							<div class="col-xs-5">
+								Long-term beds:
+							</div>
+							<div class="col-xs-2">
+								<div class="input-group number-spinner">
+									<span class="input-group-btn data-dwn">
+										<button class="btn btn-default btn-info" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></button>
+									</span>
+									<input type="text" class="form-control text-center" value="0" min="0">
+									<span class="input-group-btn data-up">
+										<button class="btn btn-default btn-info" data-dir="up"><span class="glyphicon glyphicon-plus"></span></button>
+									</span>
+								</div>
+							</div>
+						</div><br>
+						<div class="row">
+							<div class="col-xs-5">
+								Counselors:
+							</div>
+							<div class="col-xs-2">
+								<div class="input-group number-spinner">
+									<span class="input-group-btn data-dwn">
+										<button class="btn btn-default btn-info" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></button>
+									</span>
+									<input type="text" class="form-control text-center" value="0" min="0">
+									<span class="input-group-btn data-up">
+										<button class="btn btn-default btn-info" data-dir="up"><span class="glyphicon glyphicon-plus"></span></button>
+									</span>
+								</div>
+							</div>
+						</div><br>
+						<div class="row">
+							<div class="col-xs-5">
+								Career assistance:
+							</div>
+							<div class="col-xs-2">
+								<div class="input-group number-spinner">
+									<span class="input-group-btn data-dwn">
+										<button class="btn btn-default btn-info" data-dir="dwn"><span class="glyphicon glyphicon-minus"></span></button>
+									</span>
+									<input type="text" class="form-control text-center" value="0" min="0">
+									<span class="input-group-btn data-up">
+										<button class="btn btn-default btn-info" data-dir="up"><span class="glyphicon glyphicon-plus"></span></button>
+									</span>
+								</div>
+							</div>
+						</div><br>
+
+						<div class="row center">
+						<div class="col-xs-6 col-md-6 col-xs-offset-3 col-md-offset-3"><input type="submit" value="Update" class="btn btn-success btn-block btn-lg" tabindex="8"></div>
+						</div><br>
+					</div>
+				</div>
+				<div class="col-sm-8 col-md-8 search-form">
+					Search page goes here
+
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
 {% endblock %}
