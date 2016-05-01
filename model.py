@@ -1,5 +1,5 @@
 """Models and database functions for Re-connect project."""
-
+from flask import *
 from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
@@ -37,8 +37,7 @@ def connect_to_db(app):
     """Connect the database to Flask app."""
 
     # Configure to use PstgreSQL database
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://13.88.25.31:5432/compose_postgres_1'  # need to change
-    db.app = app
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://13.88.25.31:5432/compose_postgres_1'
     db.init_app(app)
 
 
