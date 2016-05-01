@@ -31,6 +31,13 @@ def signup_route():
 
     options = {}
     return render_template("signup_form.html", **options)
+@server.route('/donors')
+def message_to_donors():
+    """Message to donors"""
+
+    options = {}
+    return render_template("donors.html", **options)
+
 
 @server.route('/signup', methods=['POST'])
 def signup_process():
