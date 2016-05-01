@@ -46,7 +46,7 @@ def signup_process():
     set_login_session(new_organization)
     flash("%s added!" % email)
 
-    return redirect('/')
+    return redirect('/home')
 
 @server.route('/home')
 def home_route():
