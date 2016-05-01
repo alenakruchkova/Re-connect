@@ -57,18 +57,18 @@
 
 <style>
 
-.intro,
-.intro-body {
-   background-color: #fff;
-   color: #000;
-}
+    .intro,
+    .intro-body {
+     background-color: #fff;
+     color: #000;
+ }
 
-.homepage {
+ .homepage {
     color: #000;
 }
 
 .update-form {
-   border-right:1px solid white;
+ border-right:1px solid white;
 }
 
 .number-spinner {
@@ -212,9 +212,13 @@
 							</div>
 						</div><br>
 
-						<div class="row center">
-						<div class="col-xs-6 col-md-6 col-xs-offset-3 col-md-offset-3"><input type="submit" value="Update" class="btn btn-success btn-block btn-lg" tabindex="8"></div>
-						</div><br>
+<div class="row hidden" id="update-info">
+                            <font color="mediumseagreen">Resources updated, thanks!</font><br><br>
+                        </div>
+
+                        <div class="row center">
+                          <div class="col-xs-6 col-md-6 col-xs-offset-3 col-md-offset-3"><input type="submit" value="Update" class="btn btn-success btn-block btn-lg" tabindex="8" onclick="showUpdatedText();"></div>
+                      </div><br>
 					</div>
 				</div>
 				<div class="col-sm-8 col-md-8 search-form">

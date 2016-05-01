@@ -65,4 +65,11 @@ $(function() {
     });
 });
 
+function showUpdatedText() {
+    $('#update-info').addClass('hidden');
+    setTimeout(function() {
+    $('#update-info').removeClass('hidden');
+    }, 1000);
+}
+
 
