@@ -1,6 +1,19 @@
 from flask import *
 
 server = Blueprint('server', __name__, template_folder='views')
+# apart of Flask mail:
+# app.config.update(
+#     DEBUG=True,
+#     #EMAIL SETTINGS
+#     MAIL_SERVER='smtp.gmail.com',
+#     MAIL_PORT=465,
+#     MAIL_USE_SSL=True,
+#     MAIL_USE_TLS=False,
+#     MAIL_USERNAME=os.environ['athackhackathon@gmail.com'],
+#     MAIL_PASSWORD=os.environ['beyonceisamazing']
+#     )
+
+# mail = Mail(app)
 
 @server.route('/')
 def main_route():
@@ -19,6 +32,21 @@ def signup_route():
     options = {}
     return render_template("signup_form.html", **options)
 
+@server.route('/signup', methods=['POST'])
+def signup_process():
+    """Process signup registration."""
+    #get form variables here
+    email = request.form["email"]
+    hashed_password = request.form["hashed_password"]
+
+    new_organization = Organization()
+
+    db.session.add(new_organization)
+    db.session.commit()
+    set_login_session(new_organization)
+    flash("%s added!" % email)
+
+    return redirect('/')
 
 @server.route('/home')
 def home_route():
@@ -45,6 +73,30 @@ def view_org():
     options = {}
     return render_template("org.html", **options)
 
+
+# @app.route('/send-email', methods=['POST'])
+# def send_email():
+#     """Flask Mail app route."""
+#     email = request.form.get('email')
+
+#     msg = Message(
+#           'Human Trafficking Institutions with Available Resources',
+#           sender='athackhackathon@gmail.com',
+#           recipients=[email])
+#     msg.html = body
+
+#     mail.send(msg)
+
+#     flash('Email has been sent!')
+
+#     return redirect('/')
+
+#log in function:
+def set_login_session(user):
+    session["uniq_id"] = organization.uniq_id
+    session['email'] = organization.email
+    session['hashed_password'] = organization.hashed_password
+
 # TODO
 # implement results route
 @server.route('/results')
@@ -68,3 +120,10 @@ def show_profile():
 
     options = {}
     return render_template("org.html", **options)
+
+
+@server.route('/companylist')
+def show_companylist():
+    """Return page showing a list of companies with contact buttons."""
+
+    return render_template("companylist.html")
