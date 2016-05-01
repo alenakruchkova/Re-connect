@@ -1,6 +1,4 @@
-import os
 from flask import *
-from flask_mail import Mail, Message
 
 server = Blueprint('server', __name__, template_folder='views')
 # apart of Flask mail:
