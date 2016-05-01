@@ -75,6 +75,7 @@ def view_org():
     options = {}
     return render_template("org.html", **options)
 
+
 # @app.route('/send-email', methods=['POST'])
 # def send_email():
 #     """Flask Mail app route."""
@@ -97,3 +98,27 @@ def set_login_session(user):
     session["uniq_id"] = organization.uniq_id
     session['email'] = organization.email
     session['hashed_password'] = organization.hashed_password
+
+# TODO
+# implement results route
+@server.route('/results')
+def view_matches():
+    """View org info. Option to contact orgfrom page."""
+
+    options = {}
+    return render_template("results.html", **options)
+
+@server.route('/profile')
+# @app.route("/profile/<int:uniq_id>")
+# def show_melon(uniq_id):
+def show_profile():
+    """Return page showing the details of a given organization.
+
+    Show all info about a organization.
+    Also, provide a button to contact.
+    """
+
+    return render_template("profile.html")
+
+    options = {}
+    return render_template("org.html", **options)
