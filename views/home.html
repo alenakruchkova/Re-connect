@@ -1,13 +1,99 @@
 {% extends "base.html" %}
 {% block content %}
 
+<link href="/static/css/search_results.css" rel="stylesheet">
+
+<style>
+
+.intro,
+.intro-body {
+   background-color: #fff;
+   color: #000;
+}
+
+.homepage {
+    color: #000;
+}
+
+.update-form {
+   border-right:1px solid white;
+}
+
+.number-spinner {
+    min-width: 120px;
+}
+
+.resource-inputs {
+    background: white;
+    padding-top: 25px;
+    padding-left: 15px;
+}
+
+.checkbox label:after, 
+.radio label:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.checkbox .cr,
+.radio .cr {
+    position: relative;
+    display: inline-block;
+    border: 1px solid #a9a9a9;
+    border-radius: .25em;
+    width: 1.3em;
+    height: 1.3em;
+    float: left;
+    margin-right: .5em;
+}
+
+.radio .cr {
+    border-radius: 50%;
+}
+
+.checkbox .cr .cr-icon,
+.radio .cr .cr-icon {
+    position: absolute;
+    font-size: .8em;
+    line-height: 0;
+    top: 50%;
+    left: 20%;
+}
+
+.checkbox label input[type="checkbox"],
+.radio label input[type="radio"] {
+    display: none;
+}
+
+.checkbox label input[type="checkbox"] + .cr > .cr-icon,
+.radio label input[type="radio"] + .cr > .cr-icon {
+    transform: scale(3) rotateZ(-20deg);
+    opacity: 0;
+    transition: all .3s ease-in;
+}
+
+.checkbox label input[type="checkbox"]:checked + .cr > .cr-icon,
+.radio label input[type="radio"]:checked + .cr > .cr-icon {
+    transform: scale(1) rotateZ(0deg);
+    opacity: 1;
+}
+
+.checkbox label input[type="checkbox"]:disabled + .cr,
+.radio label input[type="radio"]:disabled + .cr {
+    opacity: .5;
+}
+
+</style>
+
 <!-- Intro Header -->
 <header class="intro">
 	<div class="intro-body">
 		<div class="container">
+			<h3 class="text-center">Search for an Organization</h3>
 			<div class="modal-body row homepage">
 				<div class="col-sm-4 col-md-4 update-form">
-					<h2>What resources do you have available?</h2>
+					<h2>Resources</h2>
 					<div class="resource-inputs">
 						<div class="row">
 							<div class="col-xs-5">
@@ -80,7 +166,75 @@
 					</div>
 				</div>
 				<div class="col-sm-8 col-md-8 search-form">
-					Search page goes here
+
+			<form action="/results">		    
+     		<div class="input-group custom-search-form">
+              <input type="text"  placeholder="Search" class="form-control">
+              <span class="input-group-btn">
+              <button class="btn btn-default advenced" type="button">
+              <span class="glyphicon glyphicon-filter"></span>
+             </button>
+              <button class="btn btn-default" type="button">
+              <span class="glyphicon glyphicon-search"></span>
+             </button>
+             </span>            
+             </div>
+              <div id="panelAdv" style='display:none'>
+                <input type="text"  placeholder="Advenced input 1"  class="form-control">
+               <input type="text"  placeholder="Advenced input 2" class="form-control">
+                <input type="text"  placeholder="Advenced input 3" class="form-control">
+             </div>
+             
+             <br>
+
+						<div class="row">
+						    
+		
+     
+            <div class="panel panel-default">
+                <!-- Default panel contents -->
+                <div class="panel-heading">Criteria</div>
+            
+                <!-- List group -->
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        Under 18 
+                        <div class="material-switch pull-right">
+                            <input id="someSwitchOptionDefault" name="someSwitchOption001" type="checkbox"/>
+                            <label for="someSwitchOptionDefault" class="label-default"></label>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        Women
+                        <div class="material-switch pull-right">
+                            <input id="someSwitchOptionPrimary" name="someSwitchOption001" type="checkbox"/>
+                            <label for="someSwitchOptionPrimary" class="label-primary"></label>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        LGBTQ
+                        <div class="material-switch pull-right">
+                            <input id="someSwitchOptionSuccess" name="someSwitchOption001" type="checkbox"/>
+                            <label for="someSwitchOptionSuccess" class="label-success"></label>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        Long-term housing
+                        <div class="material-switch pull-right">
+                            <input id="someSwitchOptionInfo" name="someSwitchOption001" type="checkbox"/>
+                            <label for="someSwitchOptionInfo" class="label-info"></label>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        Short-term housing
+                        <div class="material-switch pull-right">
+                            <input id="someSwitchOptionWarning" name="someSwitchOption001" type="checkbox"/>
+                            <label for="someSwitchOptionWarning" class="label-warning"></label>
+                        </div>
+                    </li>
+             
+                </ul>
+            </div>            
 
 				</div>
 			</div>
