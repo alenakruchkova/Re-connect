@@ -1,9 +1,9 @@
 """Utility file to seed Re-connect database with demo data"""
 
 from model import Organization
-
 from model import connect_to_db, db
-from app import app
+
+# from app import app
 
 ##############################################################
 
@@ -27,8 +27,8 @@ def load_organizations():
             serves_women = serves_women or False
             serves_lgbtq = serves_lgbtq or False
             serves_minors = serves_minors or False
-            emergency_housing = emergency_housing or False
-            long_term_housing = long_term_housing or False
+            emergency_housing = emergency_housing or 0
+            long_term_housing = long_term_housing or 0
             counseling = counseling or False
             career_assist = career_assist or False
 
@@ -54,10 +54,11 @@ def load_organizations():
  ####################################################
 
 if __name__ == "__main__":
+    from app import app
     connect_to_db(app)
 
     # In case tables haven't been created, create them
     db.create_all()
 
-    # Import data
-    load_organizations()
+# Import data
+load_organizations()

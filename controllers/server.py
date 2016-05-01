@@ -60,7 +60,7 @@ def view_matches():
 def show_profile():
     """Return page showing the details of a given organization.
 
-    Show all info about a organization. 
+    Show all info about a organization.
     Also, provide a button to contact.
     """
 

@@ -1,5 +1,5 @@
 """Models and database functions for Re-connect project."""
-
+from flask import *
 from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
