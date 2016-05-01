@@ -18,10 +18,10 @@ def hello_monkey():
          "+14155168977",
          "+16264371554",
          "+16143298370",
+         "+16508614833",
     ]
 
     for i in callers:
-        print i
         client.messages.create(
         to=i,
         from_="+12065390536",
