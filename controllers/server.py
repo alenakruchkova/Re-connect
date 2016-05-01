@@ -11,15 +11,26 @@ server = Blueprint('server', __name__, template_folder='views')
  
 @server.route("/voice", methods=['GET', 'POST'])
 def hello_monkey():
-    """Respond to incoming requests."""
-    client.messages.create(
-    to="+12068502478",
-    from_="+12065390536",
-    body="Tomorrow's forecast in Financial District, San Francisco is Clear.",
-    media_url="https://climacons.herokuapp.com/clear.png",
-)
+    """Send an sms booking request."""
 
-    return "ok"
+    callers = [
+         "+18087561115",
+         "+14155168977",
+         "+16264371554",
+         "+16143298370",
+    ]
+
+    for i in callers:
+        print i
+        client.messages.create(
+        to=i,
+        from_="+12065390536",
+        body="Request for emergency housing.",
+        media_url="https://0.s3.envato.com/files/106594784/Images.jpg",
+    )
+
+    flash("Sorry! Checkout will be implemented in a future version.")
+    return redirect("/results")
 
 @server.route('/')
 def main_route():
