@@ -1,5 +1,6 @@
 from flask import *
 
+
 server = Blueprint('server', __name__, template_folder='views')
 # apart of Flask mail:
 # app.config.update(
