@@ -19,6 +19,13 @@ def signup_route():
     options = {}
     return render_template("signup_form.html", **options)
 
+@server.route('/search')
+def search_route():
+    """Search page"""
+
+    options = {}
+    return render_template("search.html", **options)
+
 
 @server.route('/home')
 def home_route():
